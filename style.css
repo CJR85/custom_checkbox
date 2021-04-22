@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 * {
+  box-sizing: border-box;
   font-family: 'Raleway';
 }
 
@@ -11,4 +12,35 @@ html {
   justify-content: center;
   align-items: center;
   background-color: #dfdfdf;
+}
+
+.checkbox-container {
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container label {
+  cursor: pointer;
+  display: flex;
+}
+
+.checkbox-container input[type='checkbox'] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-container label::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  border: 0.05em solid black;
+}
+
+.checkbox-container label:hover::before,
+.checkbox-container input[type='checkbox']:hover + label::before {
+  background-color: #35e07d;
 }
